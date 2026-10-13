@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple SD Gothic Neo",
+    "Noto Sans KR", sans-serif;
+  background: #f4f5f7;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 720px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.chat-header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+#reset-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  color: #666;
+  cursor: pointer;
+}
+
+#reset-btn:hover {
+  background: #f0f0f0;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  line-height: 1.5;
+  font-size: 15px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.message.user {
+  align-self: flex-end;
+  background: #4f7cff;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.message.assistant {
+  align-self: flex-start;
+  background: #f0f1f3;
+  color: #222;
+  border-bottom-left-radius: 4px;
+}
+
+.message.assistant.loading {
+  color: #999;
+  font-style: italic;
+}
+
+.message.error {
+  align-self: flex-start;
+  background: #ffe5e5;
+  color: #c0392b;
+}
+
+.chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  border-top: 1px solid #eaeaea;
+}
+
+#user-input {
+  flex: 1;
+  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 15px;
+  max-height: 120px;
+  font-family: inherit;
+}
+
+#user-input:focus {
+  outline: none;
+  border-color: #4f7cff;
+}
+
+#send-btn {
+  border: none;
+  background: #4f7cff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#send-btn:disabled {
+  background: #a9bdfa;
+  cursor: not-allowed;
+}
+
+#send-btn:hover:not(:disabled) {
+  background: #3d66e0;
+}
